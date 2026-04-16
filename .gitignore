@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+
+# Outputs (large/generated data is gitignored)
+outputs/cache/
+outputs/rasters/
+outputs/vectors/
+outputs/maps/
+outputs/logs/
+
+# Keep these tracked — they are deliverables
+!outputs/reports/
+!outputs/stats/
+!outputs/figures/
+
+# Coverage
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local tooling session files
+.claude/
+.llms/
+
+# uv
+.python-version

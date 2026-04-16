@@ -1,0 +1,485 @@
+{
+  "metadata": {
+    "aoi_id": "huila",
+    "name": "Huila",
+    "country": "Colombia",
+    "coffee_type": "Arabica, smallholder",
+    "role": "Generalization test: mountainous, shade-grown edge cases",
+    "bbox": {
+      "west": -76.3,
+      "south": 1.6,
+      "east": -75.3,
+      "north": 2.7
+    },
+    "epsg_utm": 32618
+  },
+  "generated_at": "2026-04-11T19:28:16.588846",
+  "pipeline_version": "0.1.0",
+  "validation": {
+    "coffee_fraction": 0.2824135007160473,
+    "forest_2000_fraction": 0.7080960200597597,
+    "hansen_loss_pixels": 63137,
+    "passed": true
+  },
+  "data_coverage": {
+    "years_processed": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "s2_composite_count": 6,
+    "s1_composite_count": 6
+  },
+  "change_detection": {
+    "method": "rule_based_hansen_fdp",
+    "total_hotspots": 5000,
+    "total_area_ha": 41239.68,
+    "largest_hotspot_ha": 617.18,
+    "smallest_hotspot_ha": 2.72,
+    "hotspots_by_loss_year": {
+      "2019": 368,
+      "2017": 659,
+      "2018": 297,
+      "2012": 238,
+      "2016": 184,
+      "2009": 217,
+      "2008": 203,
+      "2023": 285,
+      "2024": 488,
+      "2006": 133,
+      "2022": 233,
+      "2010": 163,
+      "2011": 216,
+      "2004": 97,
+      "2020": 242,
+      "2007": 217,
+      "2005": 190,
+      "2002": 201,
+      "2001": 96,
+      "2014": 53,
+      "2021": 108,
+      "2003": 35,
+      "2013": 41,
+      "2015": 36
+    },
+    "area_ha_by_loss_year": {
+      "2019": 4525.65,
+      "2017": 6990.04,
+      "2018": 3296.47,
+      "2012": 1976.59,
+      "2016": 1975.17,
+      "2009": 1627.27,
+      "2008": 1507.67,
+      "2023": 2165.77,
+      "2024": 3650.37,
+      "2006": 977.47,
+      "2022": 1877.46,
+      "2010": 1036.0,
+      "2011": 1620.61,
+      "2004": 512.53,
+      "2020": 1647.8,
+      "2007": 1466.94,
+      "2005": 1226.3,
+      "2002": 1165.01,
+      "2001": 545.19,
+      "2014": 269.22,
+      "2021": 560.16,
+      "2003": 231.11,
+      "2013": 214.84,
+      "2015": 174.04
+    }
+  },
+  "top_hotspots": [
+    {
+      "hotspot_id": "huila_h001",
+      "area_ha": 617.18,
+      "centroid_lon": -75.914366,
+      "centroid_lat": 1.764333,
+      "rank": 1,
+      "loss_year": 2019,
+      "ndvi_trajectory": {
+        "2019": 0.8051,
+        "2020": 0.7586,
+        "2021": 0.7938,
+        "2022": 0.8031,
+        "2023": 0.7648,
+        "2024": 0.7562
+      }
+    },
+    {
+      "hotspot_id": "huila_h002",
+      "area_ha": 439.08,
+      "centroid_lon": -76.170413,
+      "centroid_lat": 1.828486,
+      "rank": 2,
+      "loss_year": 2019,
+      "ndvi_trajectory": {
+        "2019": 0.7154,
+        "2020": 0.7844,
+        "2021": 0.8102,
+        "2022": 0.8097,
+        "2023": 0.7995,
+        "2024": 0.7964
+      }
+    },
+    {
+      "hotspot_id": "huila_h003",
+      "area_ha": 345.3,
+      "centroid_lon": -75.990667,
+      "centroid_lat": 1.730575,
+      "rank": 3,
+      "loss_year": 2017,
+      "ndvi_trajectory": {
+        "2019": 0.8318,
+        "2020": 0.7941,
+        "2021": 0.8126,
+        "2022": 0.8108,
+        "2023": 0.7982,
+        "2024": 0.7787
+      }
+    },
+    {
+      "hotspot_id": "huila_h004",
+      "area_ha": 269.08,
+      "centroid_lon": -75.51654,
+      "centroid_lat": 2.302614,
+      "rank": 4,
+      "loss_year": 2018,
+      "ndvi_trajectory": {
+        "2019": 0.6913,
+        "2020": 0.7477,
+        "2021": 0.7539,
+        "2022": 0.7728,
+        "2023": 0.7416,
+        "2024": 0.7599
+      }
+    },
+    {
+      "hotspot_id": "huila_h005",
+      "area_ha": 256.85,
+      "centroid_lon": -75.523947,
+      "centroid_lat": 2.273434,
+      "rank": 5,
+      "loss_year": 2012,
+      "ndvi_trajectory": {
+        "2019": 0.705,
+        "2020": 0.7509,
+        "2021": 0.7745,
+        "2022": 0.738,
+        "2023": 0.7367,
+        "2024": 0.7608
+      }
+    },
+    {
+      "hotspot_id": "huila_h006",
+      "area_ha": 254.21,
+      "centroid_lon": -76.151858,
+      "centroid_lat": 1.801847,
+      "rank": 6,
+      "loss_year": 2016,
+      "ndvi_trajectory": {
+        "2019": 0.7241,
+        "2020": 0.7699,
+        "2021": 0.7832,
+        "2022": 0.7681,
+        "2023": 0.7654,
+        "2024": 0.7475
+      }
+    },
+    {
+      "hotspot_id": "huila_h007",
+      "area_ha": 221.56,
+      "centroid_lon": -76.070742,
+      "centroid_lat": 2.015525,
+      "rank": 7,
+      "loss_year": 2019,
+      "ndvi_trajectory": {
+        "2019": 0.8107,
+        "2020": 0.7577,
+        "2021": 0.7715,
+        "2022": 0.7871,
+        "2023": 0.7797,
+        "2024": 0.7715
+      }
+    },
+    {
+      "hotspot_id": "huila_h008",
+      "area_ha": 220.17,
+      "centroid_lon": -75.576176,
+      "centroid_lat": 2.169268,
+      "rank": 8,
+      "loss_year": 2009,
+      "ndvi_trajectory": {
+        "2019": 0.7264,
+        "2020": 0.7892,
+        "2021": 0.7881,
+        "2022": 0.7376,
+        "2023": 0.7604,
+        "2024": 0.75
+      }
+    },
+    {
+      "hotspot_id": "huila_h009",
+      "area_ha": 193.04,
+      "centroid_lon": -75.948405,
+      "centroid_lat": 1.738534,
+      "rank": 9,
+      "loss_year": 2016,
+      "ndvi_trajectory": {
+        "2019": 0.786,
+        "2020": 0.7779,
+        "2021": 0.8013,
+        "2022": 0.7872,
+        "2023": 0.7762,
+        "2024": 0.7857
+      }
+    },
+    {
+      "hotspot_id": "huila_h010",
+      "area_ha": 192.97,
+      "centroid_lon": -75.827851,
+      "centroid_lat": 2.343165,
+      "rank": 10,
+      "loss_year": 2017,
+      "ndvi_trajectory": {
+        "2019": 0.8146,
+        "2020": 0.823,
+        "2021": 0.7837,
+        "2022": 0.8091,
+        "2023": 0.8198,
+        "2024": 0.8355
+      }
+    }
+  ],
+  "model_metrics": {
+    "model_type": "random_forest",
+    "accuracy": 0.8588284871470713,
+    "f1_coffee": 0.7826904985888994,
+    "precision_coffee": 0.0,
+    "recall_coffee": 0.0
+  },
+  "ablation": {
+    "s1_only": {
+      "f1_coffee": 0.5877632898696088,
+      "accuracy": 0.7463126843657817
+    },
+    "s2_only": {
+      "f1_coffee": 0.6701902748414377,
+      "accuracy": 0.8086809945217025
+    },
+    "s1_s2": {
+      "f1_coffee": 0.6823027718550106,
+      "accuracy": 0.8162663295406658
+    }
+  },
+  "historical": {
+    "was_forest_2000_fraction": 0.0,
+    "coffee_on_former_forest_fraction": 0.0,
+    "mean_loss_year_offset": null,
+    "replacement_class_distribution": {},
+    "ndvi_by_year": {
+      "2019": 0.7343,
+      "2020": 0.7338,
+      "2021": 0.7251,
+      "2022": 0.744,
+      "2023": 0.7443,
+      "2024": 0.7528
+    },
+    "vv_mean_by_year": {
+      "2019": -7.76,
+      "2020": -7.79,
+      "2021": -7.58,
+      "2022": -7.48,
+      "2023": -7.81,
+      "2024": -7.9
+    }
+  },
+  "deforestation_attribution": {
+    "total_loss_ha": 72312.6,
+    "coffee_pct": 55.4,
+    "other_crops_pct": 2.0,
+    "built_industrial_pct": 0.1,
+    "bare_degraded_pct": 16.6,
+    "water_pct": 0.4,
+    "regrowth_pct": 25.5,
+    "by_year": {
+      "2005": {
+        "coffee_pct": 43.4,
+        "other_crops_pct": 1.4,
+        "built_industrial_pct": 0.2,
+        "bare_degraded_pct": 27.2,
+        "water_pct": 0.6,
+        "regrowth_pct": 27.2,
+        "total_pixels": 26732.93725490196
+      },
+      "2006": {
+        "coffee_pct": 52.8,
+        "other_crops_pct": 2.0,
+        "built_industrial_pct": 0.3,
+        "bare_degraded_pct": 21.2,
+        "water_pct": 0.3,
+        "regrowth_pct": 23.3,
+        "total_pixels": 15482.713725490197
+      },
+      "2007": {
+        "coffee_pct": 42.2,
+        "other_crops_pct": 2.6,
+        "built_industrial_pct": 0.2,
+        "bare_degraded_pct": 26.4,
+        "water_pct": 0.7,
+        "regrowth_pct": 27.9,
+        "total_pixels": 32248.69019607843
+      },
+      "2008": {
+        "coffee_pct": 50.0,
+        "other_crops_pct": 0.8,
+        "built_industrial_pct": 0.3,
+        "bare_degraded_pct": 22.5,
+        "water_pct": 0.4,
+        "regrowth_pct": 26.0,
+        "total_pixels": 24831.549019607843
+      },
+      "2009": {
+        "coffee_pct": 48.2,
+        "other_crops_pct": 0.8,
+        "built_industrial_pct": 0.3,
+        "bare_degraded_pct": 21.5,
+        "water_pct": 0.6,
+        "regrowth_pct": 28.7,
+        "total_pixels": 28342.84705882353
+      },
+      "2010": {
+        "coffee_pct": 51.4,
+        "other_crops_pct": 1.1,
+        "built_industrial_pct": 0.2,
+        "bare_degraded_pct": 18.9,
+        "water_pct": 0.2,
+        "regrowth_pct": 28.3,
+        "total_pixels": 22021.04705882353
+      },
+      "2011": {
+        "coffee_pct": 58.8,
+        "other_crops_pct": 1.5,
+        "built_industrial_pct": 0.2,
+        "bare_degraded_pct": 14.9,
+        "water_pct": 0.2,
+        "regrowth_pct": 24.3,
+        "total_pixels": 21442.67450980392
+      },
+      "2012": {
+        "coffee_pct": 50.8,
+        "other_crops_pct": 2.0,
+        "built_industrial_pct": 0.1,
+        "bare_degraded_pct": 22.9,
+        "water_pct": 0.6,
+        "regrowth_pct": 23.7,
+        "total_pixels": 37442.23137254902
+      },
+      "2013": {
+        "coffee_pct": 46.3,
+        "other_crops_pct": 8.8,
+        "built_industrial_pct": 0.9,
+        "bare_degraded_pct": 15.8,
+        "water_pct": 0.5,
+        "regrowth_pct": 27.9,
+        "total_pixels": 8756.858823529412
+      },
+      "2014": {
+        "coffee_pct": 50.5,
+        "other_crops_pct": 9.2,
+        "built_industrial_pct": 0.1,
+        "bare_degraded_pct": 16.5,
+        "water_pct": 3.3,
+        "regrowth_pct": 20.5,
+        "total_pixels": 12582.627450980392
+      },
+      "2015": {
+        "coffee_pct": 40.2,
+        "other_crops_pct": 17.7,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 19.3,
+        "water_pct": 2.3,
+        "regrowth_pct": 20.5,
+        "total_pixels": 7881.207843137256
+      },
+      "2016": {
+        "coffee_pct": 57.2,
+        "other_crops_pct": 0.9,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 13.6,
+        "water_pct": 0.0,
+        "regrowth_pct": 28.3,
+        "total_pixels": 19385.756862745096
+      },
+      "2017": {
+        "coffee_pct": 59.7,
+        "other_crops_pct": 3.5,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 12.7,
+        "water_pct": 0.0,
+        "regrowth_pct": 24.1,
+        "total_pixels": 48926.58823529412
+      },
+      "2018": {
+        "coffee_pct": 63.5,
+        "other_crops_pct": 2.3,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 10.5,
+        "water_pct": 0.0,
+        "regrowth_pct": 23.7,
+        "total_pixels": 27306.901960784315
+      },
+      "2019": {
+        "coffee_pct": 73.4,
+        "other_crops_pct": 0.3,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 9.1,
+        "water_pct": 0.0,
+        "regrowth_pct": 17.1,
+        "total_pixels": 27741.72156862745
+      },
+      "2020": {
+        "coffee_pct": 69.2,
+        "other_crops_pct": 0.1,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 10.6,
+        "water_pct": 0.0,
+        "regrowth_pct": 20.1,
+        "total_pixels": 20821.360784313725
+      },
+      "2021": {
+        "coffee_pct": 65.3,
+        "other_crops_pct": 1.7,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 12.1,
+        "water_pct": 0.0,
+        "regrowth_pct": 20.9,
+        "total_pixels": 12031.466666666667
+      },
+      "2022": {
+        "coffee_pct": 63.2,
+        "other_crops_pct": 0.1,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 7.7,
+        "water_pct": 0.0,
+        "regrowth_pct": 29.0,
+        "total_pixels": 21347.996078431373
+      },
+      "2023": {
+        "coffee_pct": 65.1,
+        "other_crops_pct": 0.0,
+        "built_industrial_pct": 0.0,
+        "bare_degraded_pct": 6.8,
+        "water_pct": 0.0,
+        "regrowth_pct": 28.0,
+        "total_pixels": 23425.219607843137
+      }
+    }
+  },
+  "yearly_loss": {},
+  "figures": [],
+  "maps": []
+}

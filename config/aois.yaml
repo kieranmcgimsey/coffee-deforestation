@@ -1,0 +1,70 @@
+# Areas of Interest for coffee deforestation monitoring
+# Each AOI covers ~100km of the coffee belt — large enough for geographic
+# context while staying within GEE's processing limits.
+
+aois:
+  lam_dong:
+    name: "Lâm Đồng"
+    country: "Vietnam"
+    coffee_type: "Robusta, highland"
+    role: "Primary showcase: known coffee-driven deforestation"
+    # Central Highlands — Di Linh through Duc Trong, the heart of Vietnam's robusta belt
+    bbox:
+      west: 107.8
+      south: 11.4
+      east: 108.8
+      north: 12.4
+    dry_season:
+      start_month: 12
+      end_month: 3
+      cross_year: true
+    epsg_utm: 32648
+    region_bbox:
+      west: 107.0
+      south: 10.8
+      east: 109.5
+      north: 13.0
+
+  huila:
+    name: "Huila"
+    country: "Colombia"
+    coffee_type: "Arabica, smallholder"
+    role: "Generalization test: mountainous, shade-grown edge cases"
+    # Huila department — Pitalito through La Plata, major Arabica zone
+    bbox:
+      west: -76.3
+      south: 1.6
+      east: -75.3
+      north: 2.7
+    dry_season:
+      start_month: 12
+      end_month: 2
+      cross_year: true
+    epsg_utm: 32618
+    region_bbox:
+      west: -77.0
+      south: 1.0
+      east: -74.5
+      north: 3.5
+
+  sul_de_minas:
+    name: "Sul de Minas"
+    country: "Brazil"
+    coffee_type: "Arabica, industrial"
+    role: "Negative control: stable plantations, minimal expansion"
+    # Sul de Minas — Pocos de Caldas through Alfenas, established industrial coffee
+    bbox:
+      west: -46.8
+      south: -22.2
+      east: -45.8
+      north: -21.2
+    dry_season:
+      start_month: 6
+      end_month: 9
+      cross_year: false
+    epsg_utm: 32723
+    region_bbox:
+      west: -47.5
+      south: -23.0
+      east: -45.0
+      north: -20.5

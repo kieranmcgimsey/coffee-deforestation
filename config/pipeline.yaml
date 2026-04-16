@@ -1,0 +1,70 @@
+# Pipeline configuration for coffee deforestation monitoring
+
+temporal:
+  years: [2019, 2020, 2021, 2022, 2023, 2024]
+
+cloud_masking:
+  cloud_probability_threshold: 40  # percent
+  cloud_dilation_m: 50
+
+s1_processing:
+  speckle_filter_radius_m: 50
+  polarizations: ["VV", "VH"]
+  orbit_pass: "DESCENDING"
+
+features:
+  spectral_indices:
+    - ndvi
+    - evi
+    - ndwi
+    - nbr
+    - savi
+  sar_features:
+    - vv_median
+    - vh_median
+    - vv_vh_ratio
+    - vv_stddev
+    - vh_stddev
+  contextual:
+    - elevation
+    - slope
+    - distance_to_forest_edge
+    - distance_to_road
+
+ml:
+  random_forest:
+    n_estimators: 500
+    max_depth: null
+    min_samples_leaf: 5
+    random_state: 42
+  xgboost:
+    n_estimators: 500
+    max_depth: 6
+    learning_rate: 0.05
+    random_state: 42
+  samples_per_class_per_aoi: 800
+  test_split: 0.2
+  classes:
+    - coffee
+    - forest
+    - non_coffee_cropland
+    - built_bare
+    - water
+
+change_detection:
+  fdp_coffee_threshold: 0.5
+  min_hotspot_area_ha: 0.5
+  hansen_treecover_2000_threshold: 50  # percent
+
+validation:
+  min_coffee_fraction: 0.02      # 2%
+  min_forest_2000_fraction: 0.10  # 10%
+  min_hansen_loss_pixels: 100
+
+cache:
+  base_dir: "outputs/cache"
+  hash_length: 16
+
+logging:
+  level: "INFO"
+  log_dir: "outputs/logs"

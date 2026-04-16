@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Deforestation Monitoring System</title>
+<style>
+  :root { --coffee: #6F4E37; --forest: #2D5016; --loss: #C1292E; }
+  body { font-family: "Helvetica Neue", Arial, sans-serif; background: #FAFAF8;
+         color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; line-height: 1.7; }
+  h1 { color: var(--coffee); font-size: 1.8em; margin-bottom: 0.2em; }
+  h2 { color: var(--forest); margin-top: 2rem; font-size: 1.2em;
+       border-bottom: 2px solid #E5E0D8; padding-bottom: 0.2em; }
+  .sub { color: #666; font-size: 1em; margin-bottom: 1.5em; }
+  img.hero { width: 100%; border-radius: 10px; margin: 1rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .caption { font-size: 0.78em; color: #888; text-align: center; margin-top: -0.5em; margin-bottom: 1em; }
+  .btn { display: inline-block; background: var(--forest); color: white; padding: 0.5rem 1.2rem;
+         border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9em; margin: 0.3rem 0.3rem 0.3rem 0; }
+  .btn:hover { opacity: 0.85; }
+  .btn-outline { background: white; color: var(--forest); border: 2px solid var(--forest); }
+  .card { background: white; border-radius: 8px; margin: 0.8rem 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 4px solid var(--coffee); }
+  .card a.card-link { display: block; padding: 1.2rem; text-decoration: none; color: inherit;
+                      border-radius: 8px; transition: background 0.15s, box-shadow 0.15s; }
+  .card a.card-link:hover { background: #F5F0EB; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .card h3 { margin: 0 0 0.3rem; font-size: 1em; color: var(--forest); }
+  .card h3::after { content: " →"; color: var(--coffee); }
+  .card p { margin: 0.2rem 0; color: #666; font-size: 0.85em; }
+  .tag { display: inline-block; background: #F5F0EB; border-radius: 4px;
+         padding: 0.2rem 0.6rem; margin: 0.1rem; font-size: 0.8em; font-weight: 600; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.85em; margin: 0.8rem 0; }
+  th { background: var(--coffee); color: white; padding: 0.4rem 0.7rem; text-align: left; font-size: 0.85em; }
+  td { padding: 0.35rem 0.7rem; border-bottom: 1px solid #E5E0D8; }
+  tr:nth-child(even) { background: #F9F6F3; }
+  .how { background: white; border-left: 3px solid var(--forest); padding: 1rem 1.2rem;
+         margin: 0.8rem 0; border-radius: 0 8px 8px 0; font-size: 0.88em; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .how ol { padding-left: 1.3em; margin: 0.5em 0; }
+  .how li { margin: 0.3em 0; }
+  .note { background: #FFF8E1; border: 1px solid #FFECB3; border-radius: 6px;
+          padding: 0.8rem 1rem; margin: 0.8rem 0; font-size: 0.82em; }
+  .note strong { color: #F57F17; }
+</style>
+</head>
+<body>
+
+<h1>Coffee Deforestation Monitoring System</h1>
+<p class="sub">Satellite-based detection of coffee-driven forest loss across three continents, with ML classification and automated reporting.</p>
+
+<a href="https://github.com/kieranmcgimsey/coffee-deforestation" class="btn">Source Code</a>
+<a href="report_lam_dong.html" class="btn btn-outline">View Full Report</a>
+
+<img src="timeline.gif" alt="Deforestation timeline 2001-2024" class="hero">
+<p class="caption">Coffee-linked deforestation hotspots accumulating in Vietnam's Central Highlands (2001–2024). Yellow = older, red = recent.</p>
+
+<h2>What &amp; Why</h2>
+<p>Coffee is a major driver of tropical deforestation, but quantifying <em>how much</em> forest loss is coffee-driven requires combining multiple satellite datasets. This system intersects Hansen forest loss records (2001–2024) with FDP coffee probability maps to identify hotspots, then attributes <strong>all</strong> deforestation by replacement land cover — not just coffee.</p>
+
+<h2>Results</h2>
+<table>
+  <tr><th>Region</th><th>Forest Loss</th><th>Coffee %</th><th>Hotspots</th><th>ML F1</th></tr>
+  <tr><td><strong>Lam Dong, Vietnam</strong></td><td>156,680 ha</td><td>49%</td><td>5,000</td><td>0.491</td></tr>
+  <tr><td><strong>Huila, Colombia</strong></td><td>72,313 ha</td><td>55%</td><td>5,000</td><td>0.483</td></tr>
+  <tr><td><strong>Sul de Minas, Brazil</strong> (control)</td><td>94,227 ha</td><td>32%</td><td>5,000</td><td>0.625</td></tr>
+</table>
+<p style="font-size:0.82em;color:#666">Coffee dominates loss in Vietnam (49%) and Colombia (55%) but not in the Brazilian control (32%). Cross-AOI ML generalisation is weak (F1 0.48–0.63) — coffee looks spectrally different across regions.</p>
+
+<h2>How It Works</h2>
+<div class="how">
+<ol>
+  <li><strong>Sentinel-1/2 composites</strong> at 10m from GEE (annual dry-season medians, 2019–2024)</li>
+  <li><strong>19-feature stack</strong> — spectral indices, SAR backscatter, elevation, temporal change</li>
+  <li><strong>Hotspot detection</strong> — Hansen loss ∩ FDP coffee &gt; 50% → contiguous polygons</li>
+  <li><strong>Attribution</strong> — classify ALL loss by current land cover (coffee / crops / built / regrowth)</li>
+  <li><strong>ML validation</strong> — RF/XGBoost with cross-AOI holdout and S1/S2 ablation</li>
+  <li><strong>Reports</strong> — interactive maps with year slider, attribution charts, LLM narrative agents</li>
+</ol>
+</div>
+
+<h2>Reports</h2>
+
+<div class="card">
+  <a href="report_lam_dong.html" class="card-link">
+    <h3>Vietnam — Lam Dong</h3>
+    <p>Central Highlands robusta frontier. Active clearing.</p>
+    <span class="tag">156,680 ha loss</span> <span class="tag">49% coffee</span>
+  </a>
+</div>
+<div class="card">
+  <a href="report_huila.html" class="card-link">
+    <h3>Colombia — Huila</h3>
+    <p>Andean shade-grown Arabica. Generalisation test.</p>
+    <span class="tag">72,313 ha loss</span> <span class="tag">55% coffee</span>
+  </a>
+</div>
+<div class="card">
+  <a href="report_sul_de_minas.html" class="card-link">
+    <h3>Brazil — Sul de Minas</h3>
+    <p>Established industrial Arabica. Negative control.</p>
+    <span class="tag">94,227 ha loss</span> <span class="tag">32% coffee</span>
+  </a>
+</div>
+<div class="card">
+  <a href="synthesis.html" class="card-link">
+    <h3>Cross-Region Synthesis</h3>
+    <p>Comparative attribution across all three regions.</p>
+  </a>
+</div>
+
+<h2>Interactive Maps</h2>
+<p style="font-size:0.88em">Zoomable maps with year slider (2001–2024). Toggle satellite basemap. Click hotspots for details.</p>
+<a href="map_lam_dong.html" class="btn btn-outline">Vietnam</a>
+<a href="map_huila.html" class="btn btn-outline">Colombia</a>
+<a href="map_sul_de_minas.html" class="btn btn-outline">Brazil</a>
+
+<div class="note">
+<strong>Limitations:</strong> No independent ground truth — ML validated against proxy labels only. FDP coverage is uneven. Hansen has 12–18 month latency. Cross-region ML generalisation is weak. This is a screening tool, not an operational classifier. Full details in each <a href="report_lam_dong.html">report's Limitations section</a>.
+</div>
+
+<p style="font-size:0.8em;color:#888;margin-top:2rem;text-align:center">
+  <a href="https://github.com/kieranmcgimsey/coffee-deforestation" style="color:#666">GitHub Repository</a> ·
+  211 tests · 69% coverage · Python 3.12 · GEE · scikit-learn · Anthropic Claude
+</p>
+
+</body>
+</html>
